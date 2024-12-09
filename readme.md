@@ -5,14 +5,6 @@
 ## Files
 ```shell
 .
-├── assets
-│   ├── VALOR32K
-│   │   └──desc_test.json
-│   │   └──desc_train.json
-│   │   └──desc_val.json
-│   ├── YouCook2
-│   │   └──desc_train_pair_yc2.json
-│   │   └──desc_val_pair_yc2.json
 ├── utils
 │   ├── cut_video.py
 │   └── download_video.py
