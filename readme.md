@@ -1,4 +1,4 @@
-# VideoA11yGPT: Method and Datasets for Accessible Video Description
+# VideoA11y: Method and Datasets for Accessible Video Description
 
 ![Process Pipeline](img/pipeline.png)
 
@@ -26,18 +26,14 @@
 
 - Clone this repo:
 ```bash
-git clone https://github.com/videoa11ygpt/VideoA11yGPT.git
-cd VideoA11yGPT
+git clone https://github.com/videoa11ygpt/VideoA11y.git
+cd VideoA11y
 ```
 
 - Dependencies
 ```
 pip install -r requirements.txt
 ```
-
-## Prepare Data from Original Datasets
-
-- We provided the original metadata files from VALOR32K and YouCook2 datasets, they are in .json format.
 
 ### Download Videos from YouTube
 
@@ -46,15 +42,6 @@ pip install -r requirements.txt
   
 ```
 python ./utils/download_video.py --max_workers <max_workers> --target_folder <Your folder to store videos> --video_ids_file <video_ids_file (e.g., `video_ids.txt`)>
-```
-
-### Cut the Videos as Clips (Only for VALOR32K)
-
-- The video IDs in VALOR32K are shown like `YouTubeID_StartTime_EndTime`.
-- Run the script below:
-  
-```
-python ./utils/cut_video.py --json_file <Path to the JSON file containing the video IDs.> --original_path <Directory path where the original videos are stored.> --new_path <Directory path where the processed videos will be saved.>
 ```
 
 ## Generate Video Descriptions
@@ -71,8 +58,8 @@ python main.py --video_folder <path/to/videos> --desc_file <path/to/original_des
 - --method: The processing method to use. Each of them represents a prompt. Options are:
     - GPT4V: Use only GPT-4V for video description (_GPT-4V_).
     - GPT4VHA: Combine GPT-4V with Human Annotation (_GPT-4V + Human Annotation_).
-    - GPT4AD: GPT-4V with our AD Guidelines (_VideoA11yGPT w/o HA_).
-    - GPT4VADHA: Combination of GPT-4V, our AD Guidelines, and Human Annotation (**_VideoA11yGPT_**).
+    - GPT4AD: GPT-4V with our AD Guidelines (_VideoA11y w/o HA_).
+    - GPT4VADHA: Combination of GPT-4V, our AD Guidelines, and Human Annotation (**_VideoA11y_**).
 
 
 ## License
